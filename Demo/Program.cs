@@ -124,6 +124,8 @@ namespace Demo
             #endregion
 
             #region Generic Collections
+
+            #region List
             //List<int> Numbers = new List<int>();
             //Console.WriteLine($"Count: {Numbers.Count}, Capacity of Numbers = {Numbers.Capacity}");
             //// default capacity is 0 without adding any elements 
@@ -169,13 +171,87 @@ namespace Demo
             //}
 
             //Nums[6] = 100; // ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-            
+
             //Nums.Insert(3, 4);
 
             //int Result = SumList(Nums);
             //Console.WriteLine(Result);
 
-            // Nums.Add("Aliaa"); // Compile Time Error: 
+            // Nums.Add("Aliaa"); // Compile Time Error:  
+            #endregion
+
+            #region List Methods
+            
+            List<int> Numbers = new List<int> { 1, 2, 3, 4 };
+
+
+            Console.WriteLine($"Count: {Numbers.Count}, Capacity of Numbers = {Numbers.Capacity}");
+
+            //Numbers.Add(5);
+
+            //Numbers.AddRange(new int[] { 6, 7 });
+
+            //Console.WriteLine($"Count: {Numbers.Count}, Capacity of Numbers = {Numbers.Capacity}");
+
+            //foreach (int Num in Numbers)
+            //{
+            //    Console.WriteLine(Num);
+            //}
+
+            //Numbers.ForEach(Num => Console.WriteLine(Num));
+
+            //Numbers.Insert(6, 8); // insert element into a specific index
+
+            //Numbers.InsertRange(4, new int[] { 9, 10 }); // insert a range of elements into a specific index
+
+            //int index = Numbers.BinarySearch(100); // search for an element in a sorted list
+            //// returns the complment of the index of the last element complement 
+
+            //Console.WriteLine($"Index of 100: {index}"); 
+
+            ////Numbers.Clear(); // remove all elements from the list
+
+            //Console.WriteLine(Numbers.Contains(5)); // check if the list contains an element
+
+            //int[] array = new int[10];
+            // 0 0 0 0 0 0 0 0 0 0
+
+            //Numbers.CopyTo(array); // copy the elements of the list to an array starting from index 0
+
+            //Numbers.CopyTo(array, 3); // copy the elements of the list to an array starting from a specific index
+
+            //Numbers.CopyTo(1, array, 5, 3); // copy 3 elements starting from index 1 to an array starting from index 5
+            //                                // needs to have the same size of the list or greater
+            //foreach(int i in Numbers) {
+            //    Console.WriteLine(i);
+            //}
+
+            //Numbers.EnsureCapacity(4); // ensure that the list has a capacity of at least 4
+
+            //Numbers.EnsureCapacity(15); // increase the capacity of the list to 10
+            // 4 => 8 => 15
+
+            //int index = Numbers.IndexOf(5); // return the index of the first occurrence of 5
+
+            //int index = Numbers.LastIndexOf(5); // return the index of the last occurrence of 5
+
+            //Numbers.Reverse(); // reverse the order of the elements in the list
+
+            //Numbers.Sort(); // sort the elements in the list
+
+            //Numbers.Sort((x, y) => x.CompareTo(y)); // sort the elements in the list using a custom comparison
+
+            //Numbers.Sort((x, y) => y.CompareTo(x)); // sort the elements in the list in descending order
+
+            //Numbers.Remove(5); // remove the first occurrence of 5
+            
+            //Numbers.RemoveAt(5); // remove the element at index 5
+            
+            //Numbers.RemoveRange(2, 3); // remove 3 elements starting from index 2
+
+            
+            #endregion
+
             #endregion
         }
     }
