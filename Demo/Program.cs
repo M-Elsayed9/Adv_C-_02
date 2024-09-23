@@ -265,7 +265,7 @@ namespace Demo
             //LinkedListNode<int> AfterNode = Numbers.Find(2);
 
             //LinkedListNode<int> node3 = Numbers.AddAfter(AfterNode, 2);
-            
+
             //LinkedListNode<int> node4 = Numbers.AddBefore(node2, 4);
 
             //LinkedListNode<int> node5 = Numbers.AddLast(5);
@@ -283,6 +283,32 @@ namespace Demo
             //}
 
             //Numbers.RemoveFirst();
+
+            #endregion
+
+            #region Stack
+            // Lifo => Last in first out
+
+            //Stack<int> Stack = new Stack<int>();
+
+            //Stack.Push(1); // add an element to the top of the stack
+
+            //Stack.Push(2);
+
+            //Stack.Push(3);
+
+            //Console.WriteLine(Stack.Peek()); // return the element at the top of the stack without removing it
+
+            //Console.WriteLine(Stack.Pop()); // remove and return the element at the top of the stack
+
+            //Console.WriteLine(Stack.TryPop(out int Element));
+
+            //Console.WriteLine(Element);
+
+            //foreach (int i in Stack)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
             #endregion
 
