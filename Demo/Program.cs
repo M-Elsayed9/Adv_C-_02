@@ -181,11 +181,11 @@ namespace Demo
             #endregion
 
             #region List Methods
-            
-            List<int> Numbers = new List<int> { 1, 2, 3, 4 };
+
+            //List<int> Numbers = new List<int> { 1, 2, 3, 4 };
 
 
-            Console.WriteLine($"Count: {Numbers.Count}, Capacity of Numbers = {Numbers.Capacity}");
+            //Console.WriteLine($"Count: {Numbers.Count}, Capacity of Numbers = {Numbers.Capacity}");
 
             //Numbers.Add(5);
 
@@ -244,12 +244,46 @@ namespace Demo
             //Numbers.Sort((x, y) => y.CompareTo(x)); // sort the elements in the list in descending order
 
             //Numbers.Remove(5); // remove the first occurrence of 5
-            
+
             //Numbers.RemoveAt(5); // remove the element at index 5
-            
+
             //Numbers.RemoveRange(2, 3); // remove 3 elements starting from index 2
 
+
+            #endregion
+
+            #region Linked List
+
+            //LinkedList<int> Numbers = new LinkedList<int>();
+
+            //Console.WriteLine($"Count: {Numbers.Count}");
+
+            //LinkedListNode<int> node1 = Numbers.AddFirst(1);
+
+            //LinkedListNode<int> node2 = Numbers.AddFirst(2);
+
+            //LinkedListNode<int> AfterNode = Numbers.Find(2);
+
+            //LinkedListNode<int> node3 = Numbers.AddAfter(AfterNode, 2);
             
+            //LinkedListNode<int> node4 = Numbers.AddBefore(node2, 4);
+
+            //LinkedListNode<int> node5 = Numbers.AddLast(5);
+
+            //foreach (int Num in Numbers)
+            //{
+            //    Console.WriteLine(Num);
+            //}
+
+            //Console.WriteLine(Numbers.Remove(2));
+
+            //foreach (int Num in Numbers)
+            //{
+            //    Console.WriteLine(Num);
+            //}
+
+            //Numbers.RemoveFirst();
+
             #endregion
 
             #endregion
