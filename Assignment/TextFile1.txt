@@ -1,0 +1,152 @@
+﻿Report on Collections in C# and .NET: A Comparison of Structure, Time Complexity, and Business Case
+
+1. ArrayList (Non-Generic)
+
+Structure:
+- ArrayList is a non-generic collection in C#.
+- It stores objects of any type and requires casting when retrieving elements.
+- Internally, it uses a dynamically resizing array, meaning that its capacity grows as elements are added.
+
+Time Complexity:
+- Access by Index: O(1) (Direct array access).
+- Insert at the End: O(1) (Amortized, though resizing the internal array can be O(n)).
+- Insert/Remove at Index: O(n) (Due to shifting elements).
+- Search: O(n) (Linear search).
+
+ **Business Case:**
+- Used in legacy code where type safety isn't critical, or backward compatibility with .NET 1.0/1.1 is needed.
+- **Example:**
+  ```csharp
+  ArrayList arrayList = new ArrayList();
+  arrayList.Add(1);
+  arrayList.Add("Hello");
+  object item = arrayList[0]; // Casting may be required
+
+---
+
+ 2. **ArrayList<T>** (Generic)
+
+`ArrayList<T>` is not available in C#. However, the generic equivalent is `List<T>`, which is discussed below.
+
+---
+
+ 3. **List<T>** (Generic)
+
+ **Structure:**
+- `List<T>` is a strongly typed generic collection based on an array.
+- It can store elements of a specified type, ensuring type safety.
+- It dynamically resizes when adding elements beyond the current capacity.
+
+ **Time Complexity:**
+- **Access by Index:** O(1) (Direct array access).
+- **Insert at the End:** O(1) (Amortized).
+- **Insert/Remove at Index:** O(n) (Shifting of elements).
+- **Search:** O(n) (Linear search for non-indexed access).
+
+ **Business Case:**
+- Ideal for scenarios requiring fast access by index, such as processing items in bulk, building dynamic arrays, or working with strongly typed data.
+- **Example:**
+  ```csharp
+  List<int> list = new List<int>();
+  list.Add(10);
+  list.Add(20);
+  int item = list[0]; // No casting required
+
+---
+
+ 4. **List Methods**
+
+ **Common Methods:**
+- **Add:** Adds an element at the end.
+- **Remove:** Removes the first occurrence of a specified element.
+- **Insert:** Inserts an element at a specified index.
+- **IndexOf:** Returns the index of a specified element.
+- **Contains:** Checks if the list contains a specific item.
+
+ **Time Complexity for Methods:**
+- **Add:** O(1) (Amortized).
+- **Remove:** O(n) (Requires search + shifting).
+- **Insert:** O(n) (Due to shifting).
+- **IndexOf:** O(n) (Linear search).
+
+ **Business Case:**
+- Use these methods in dynamic operations involving lists of known types, like managing UI elements or processing data from databases.
+
+---
+
+ 5. **LinkedList<T>** (Generic)
+
+ **Structure:**
+- `LinkedList<T>` is a doubly linked list that stores nodes containing references to the next and previous nodes.
+- Each element (node) knows its neighbors, making certain operations like insertion or deletion more efficient compared to `List<T>`.
+
+ **Time Complexity:**
+- **Access by Index:** O(n) (No direct index access, requires traversal).
+- **Insert/Remove at Head/Tail:** O(1).
+- **Insert/Remove at Specific Node:** O(1) (Given a reference to the node).
+- **Search:** O(n).
+
+ **Business Case:**
+- Suitable for scenarios where frequent insertions and deletions are required without caring about random access (e.g., implementing queues, undo/redo functionality).
+- **Example:**
+  ```csharp
+  LinkedList<int> linkedList = new LinkedList<int>();
+  linkedList.AddLast(1);
+  linkedList.AddFirst(0);
+  ```
+
+- 6. **Stack<T>** (Generic)
+
+ **Structure:**
+- `Stack<T>` is a Last-In-First-Out (LIFO) collection, meaning elements are added to the top and removed from the top.
+- It's internally implemented as an array that resizes when necessary.
+
+ **Time Complexity:**
+- **Push (Add to Top):** O(1).
+- **Pop (Remove from Top):** O(1).
+- **Peek (Access Top):** O(1).
+- **Search:** O(n) (Requires linear traversal).
+
+ **Business Case:**
+- Commonly used for scenarios like expression evaluation, reversing elements, and managing function call stacks.
+- **Example:**
+  ```csharp
+  Stack<int> stack = new Stack<int>();
+  stack.Push(1);
+  stack.Push(2);
+  int top = stack.Peek(); // 2
+ 
+
+---
+
+ 7. **Queue<T>** (Generic)
+
+ **Structure:**
+- `Queue<T>` is a First-In-First-Out (FIFO) collection, where elements are added at the end (enqueue) and removed from the front (dequeue).
+- Internally, it uses a circular array to manage its elements.
+
+ **Time Complexity:**
+- **Enqueue (Add to End):** O(1).
+- **Dequeue (Remove from Front):** O(1).
+- **Peek (Access Front):** O(1).
+- **Search:** O(n).
+
+ **Business Case:**
+- Useful for scenarios where elements must be processed in the order they are received, like scheduling tasks or managing printer queues.
+- **Example:**
+  ```csharp
+  Queue<int> queue = new Queue<int>();
+  queue.Enqueue(1);
+  queue.Enqueue(2);
+  int front = queue.Dequeue(); // 1
+
+---
+ Comparison Summary
+
+| Collection       | Structure         | Access Time | Insert/Remove (Head/Tail) | Business Case                                                                 |
+|------------------|-------------------|-------------|---------------------------|--------------------------------------------------------------------------------|
+| `ArrayList`      | Dynamic Array      | O(1)        | O(n)                       | Legacy use cases, no type safety.                                              |
+| `List<T>`        | Generic Array      | O(1)        | O(n)                       | When type safety and fast access by index are important.                       |
+| `LinkedList<T>`  | Doubly Linked List | O(n)        | O(1)                       | Frequent insertions and deletions at both ends without random access.          |
+| `Stack<T>`       | LIFO Structure     | O(1)        | O(1)                       | Last-in, first-out scenarios like function call stacks or reversing items.     |
+| `Queue<T>`       | FIFO Structure     | O(1)        | O(1)                       | First-in, first-out scenarios like scheduling tasks or processing incoming data.|
