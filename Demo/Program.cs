@@ -312,6 +312,39 @@ namespace Demo
 
             #endregion
 
+            #region Queue
+            // Fifo => First in first out
+
+            //Queue<int> Queue = new Queue<int>();
+
+            //Queue.Enqueue(1); // add an element to the end of the queue
+            //Queue.Enqueue(2);
+            //Queue.Enqueue(3);
+            //Queue.Enqueue(4);
+            
+            //foreach (int i in Queue) {
+            //    Console.WriteLine(i);
+            //}
+
+            //Console.WriteLine(Queue.Peek()); // return the element at the beginning of the queue without removing it
+
+            //Console.WriteLine(Queue.Dequeue()); // remove and return the element at the beginning of the queue
+            
+            //Console.WriteLine(Queue.TryDequeue(out int Element));
+            
+            //Console.WriteLine(Element);
+
+            //Console.WriteLine(Queue.TryPeek(out int Element2));
+            //Console.WriteLine(Element2);
+
+            //foreach (int i in Queue)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+            #endregion
+
             #endregion
         }
     }
