@@ -16,7 +16,6 @@ Time Complexity:
  **Business Case:**
 - Used in legacy code where type safety isn't critical, or backward compatibility with .NET 1.0/1.1 is needed.
 - **Example:**
-  ```csharp
   ArrayList arrayList = new ArrayList();
   arrayList.Add(1);
   arrayList.Add("Hello");
@@ -46,7 +45,6 @@ Time Complexity:
  **Business Case:**
 - Ideal for scenarios requiring fast access by index, such as processing items in bulk, building dynamic arrays, or working with strongly typed data.
 - **Example:**
-  ```csharp
   List<int> list = new List<int>();
   list.Add(10);
   list.Add(20);
@@ -89,11 +87,9 @@ Time Complexity:
  **Business Case:**
 - Suitable for scenarios where frequent insertions and deletions are required without caring about random access (e.g., implementing queues, undo/redo functionality).
 - **Example:**
-  ```csharp
   LinkedList<int> linkedList = new LinkedList<int>();
   linkedList.AddLast(1);
   linkedList.AddFirst(0);
-  ```
 
 - 6. **Stack<T>** (Generic)
 
@@ -116,7 +112,6 @@ Time Complexity:
   stack.Push(2);
   int top = stack.Peek(); // 2
  
-
 ---
 
  7. **Queue<T>** (Generic)
@@ -134,7 +129,6 @@ Time Complexity:
  **Business Case:**
 - Useful for scenarios where elements must be processed in the order they are received, like scheduling tasks or managing printer queues.
 - **Example:**
-  ```csharp
   Queue<int> queue = new Queue<int>();
   queue.Enqueue(1);
   queue.Enqueue(2);
